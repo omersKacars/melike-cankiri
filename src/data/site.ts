@@ -5,6 +5,6 @@ export const site = {
  // TODO: MELIKE_CONFIRM — doğrulanınca doldurun; boş alanlar görüntülenmez.
  university: '', graduationYear: '', careerStart: '', tbbRegistration: '', mediationRegistration: '', languages: [], portrait: '', socialLinks: [], mediationAreas: [],
 };
-export const mapUrl = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(site.address);
+export const mapUrl = 'https://maps.app.goo.gl/8MqFbRb2xWvEaECm7';
 export const url = (path = '') => `${import.meta.env.BASE_URL.replace(/\/$/, '')}/${path.replace(/^\//, '')}`;
 export const nav = [['', 'Ana Sayfa'], ['hakkinda/', 'Hakkında'], ['faaliyet-alanlari/', 'Faaliyet Alanları'], ['arabuluculuk/', 'Arabuluculuk'], ['yayinlar/', 'Yayınlar']];
