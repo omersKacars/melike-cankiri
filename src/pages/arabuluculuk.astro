@@ -1,0 +1,4 @@
+---
+import Layout from '../layouts/Layout.astro';import PageTitle from '../components/PageTitle.astro';import Steps from '../components/Steps.astro';import {site,url} from '../data/site';
+---
+<Layout title="Arabuluculuk | Av. Melike Çankırı"><PageTitle title="Arabuluculuk" description="Tarafların katılımıyla yürütülen bir uyuşmazlık çözüm süreci."/><section class="container content-section"><div class="reading"><h2>Arabuluculuk hakkında</h2><p>Arabuluculuk, uyuşmazlıkların tarafların katılımıyla, tarafsız bir üçüncü kişi eşliğinde çözülmesini amaçlayan alternatif uyuşmazlık çözüm yöntemlerinden biridir.</p></div><Steps/>{site.mediationAreas.length>0 && <ul>{site.mediationAreas.map(a=><li>{a}</li>)}</ul>}<p class="notice">Yukarıdaki sıralama sürece ilişkin genel bir çerçevedir; herhangi bir sonuç taahhüdü içermez. <a href={url('iletisim/')}>İletişim bilgileri</a></p></section></Layout>

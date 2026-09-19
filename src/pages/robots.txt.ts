@@ -1,0 +1,1 @@
+export function GET({site}:any){return new Response('User-agent: *\nAllow: /\n'+(site?'Sitemap: '+new URL(import.meta.env.BASE_URL.replace(/\/$/,'')+'/sitemap.xml',site).href+'\n':''),{headers:{'Content-Type':'text/plain'}})}

@@ -1,0 +1,4 @@
+---
+import {site,mapUrl} from '../data/site';import Icon from './Icon.astro';
+---
+<div class="contact-grid"><a class="card contact-card" href={'tel:'+site.phoneLink}><span class="icon"><Icon name="phone"/></span><span class="eyebrow">Telefon</span><h3>{site.phone}</h3><span class="card-bottom">Telefonla iletişim <Icon/></span></a><a class="card contact-card" href={'mailto:'+site.email}><span class="icon"><Icon name="mail"/></span><span class="eyebrow">E-posta</span><h3 class="email">{site.email}</h3><span class="card-bottom">E-posta gönder <Icon/></span></a><a class="card contact-card" href={mapUrl} target="_blank" rel="noopener noreferrer"><span class="icon"><Icon name="pin"/></span><span class="eyebrow">Ofis · Çanakkale</span><p>Prof. Dr. Ümit Serdaroğlu Cd.<br/>Mavi Evler Sitesi C Blok No:68/3 D:7<br/>Barbaros Mahallesi, Merkez</p><span class="card-bottom">Yol tarifi al <Icon/></span></a></div>

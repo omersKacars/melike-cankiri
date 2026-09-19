@@ -1,0 +1,14 @@
+---
+import {site, nav, url, mapUrl} from '../data/site';
+import Icon from '../components/Icon.astro';
+import '../styles.css';
+const {title=site.name+' | Hukuk & Arabuluculuk | Çanakkale', description="Av. Melike Çankırı'nın Çanakkale'deki avukatlık ve arabuluculuk faaliyetleri, mesleki bilgileri ve iletişim bilgileri.", noindex=false}=Astro.props;
+const canonical=Astro.site ? new URL(Astro.url.pathname,Astro.site).href : undefined;
+---
+<!doctype html><html lang="tr"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>{title}</title><meta name="description" content={description}/>{canonical && <link rel="canonical" href={canonical}/>}<meta name="robots" content={noindex?'noindex,follow':'index,follow'}/><link rel="icon" type="image/svg+xml" href={url('favicon.svg')}/><meta name="theme-color" content="#17212B"/></head><body>
+<a class="skip" href="#main">İçeriğe geç</a>
+<header><div class="container header-inner"><a class="brand" href={url()}><span class="monogram">MÇ<span></span></span><span><strong>{site.name}</strong><small>{site.subtitle}</small></span></a><nav class="desktop-nav" aria-label="Ana menü">{nav.map(([path,label])=><a href={url(path)} aria-current={Astro.url.pathname===url(path)?'page':undefined}>{label}</a>)}</nav><a class="button header-contact" href={url('iletisim/')}>İletişim <Icon name="arrow"/></a><details class="mobile-menu"><summary aria-label="Menüyü aç">Menü <span>☰</span></summary><nav aria-label="Mobil menü">{[...nav,['iletisim/','İletişim']].map(([path,label])=><a href={url(path)}>{label}</a>)}</nav></details></div></header>
+<main id="main"><slot/></main>
+<footer><div class="container footer-grid"><div><a class="brand footer-brand" href={url()}><span class="monogram">MÇ<span></span></span><span><strong>{site.name}</strong><small>{site.subtitle}</small></span></a><p>Çanakkale Barosu · Sicil No: 773</p><p class="footer-note">Bu internet sitesinde yer alan içerikler genel bilgilendirme amacı taşır ve hukuki görüş veya danışmanlık niteliğinde değildir.</p></div><div><h2>Sayfalar</h2>{[...nav.slice(1),['iletisim/','İletişim'],['gizlilik/','Gizlilik']].map(([path,label])=><a href={url(path)}>{label}</a>)}</div><div><h2>İletişim</h2><a href={'tel:'+site.phoneLink}>{site.phone}</a><a href={'mailto:'+site.email}>{site.email}</a><p>{site.address}</p><p>{site.hours}</p></div></div><div class="container copyright">© {new Date().getFullYear()} Av. Melike Çankırı. Tüm hakları saklıdır.<span>Çanakkale, Türkiye</span></div></footer>
+<div class="mobile-contact"><a href={'tel:'+site.phoneLink}><Icon name="phone"/>Ara</a><a href={'mailto:'+site.email}><Icon name="mail"/>E-posta</a><a href={mapUrl} target="_blank" rel="noopener noreferrer"><Icon name="pin"/>Konum</a></div>
+</body></html>

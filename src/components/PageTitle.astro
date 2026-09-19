@@ -1,0 +1,4 @@
+---
+import {url} from '../data/site';const {title,kicker='Av. Melike Çankırı',description}=Astro.props;
+---
+<div class="page-title container"><div class="breadcrumb"><a href={url()}>Ana Sayfa</a><span>/</span><span>{title}</span></div><p class="eyebrow">{kicker}</p><h1>{title}</h1>{description && <p class="lead">{description}</p>}</div>

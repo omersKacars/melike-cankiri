@@ -1,0 +1,2 @@
+import {articles} from '../data/articles';import {url} from '../data/site';
+export function GET({site}:any){const paths=['','hakkinda/','faaliyet-alanlari/','arabuluculuk/','yayinlar/','iletisim/','gizlilik/',...articles.map(a=>'yayinlar/'+a.frontmatter.slug+'/')];const locations=site?paths.map(p=>'<url><loc>'+new URL(url(p),site).href+'</loc></url>').join(''):'';return new Response('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+locations+'</urlset>',{headers:{'Content-Type':'application/xml'}})}

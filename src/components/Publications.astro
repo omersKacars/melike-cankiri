@@ -1,0 +1,4 @@
+---
+import {articles} from '../data/articles'; import {url} from '../data/site';import Icon from './Icon.astro';const {limit}=Astro.props;const items=limit?articles.slice(0,limit):articles;
+---
+{items.length ? <div class="contact-grid">{items.map(({frontmatter:a})=><a class="card publication" href={url('yayinlar/'+a.slug+'/')}><span class="eyebrow">{a.category}</span><h3>{a.title}</h3><p>{a.description}</p><time datetime={a.date}>{new Date(a.date).toLocaleDateString('tr-TR')}</time><span class="card-bottom">Yazıyı oku <Icon/></span></a>)}</div> : <div class="empty-publications"><span class="icon"><Icon name="book"/></span><div><h3>Hukuki bilgilendirme yazıları</h3><p>Yayımlanan yazılara bu bölümden ulaşabilirsiniz. Henüz yayımlanmış bir yazı bulunmuyor.</p></div></div>}

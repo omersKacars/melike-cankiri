@@ -1,0 +1,4 @@
+// TODO: MELIKE_CONFIRM — yalnızca avukat tarafından teyit edilen alanları true yapın.
+export const services = [
+ ['Aile Hukuku','Aile ilişkilerinden doğan hukuki konular.'], ['İş Hukuku','Çalışma ilişkilerine ilişkin hukuki konular.'], ['Ticaret Hukuku','Ticari faaliyetlere ilişkin hukuki konular.'], ['Tüketici Hukuku','Tüketici işlemlerine ilişkin hukuki konular.'], ['Gayrimenkul Hukuku','Taşınmazlara ilişkin hukuki konular.'], ['Miras Hukuku','Miras ilişkilerine ilişkin hukuki konular.'], ['Borçlar Hukuku','Borç ve sözleşme ilişkilerine ilişkin hukuki konular.'], ['İcra ve İflas Hukuku','Takip süreçlerine ilişkin hukuki konular.'], ['Ceza Hukuku','Ceza yargılamasına ilişkin hukuki konular.'], ['Sigorta Hukuku','Sigorta ilişkilerine ilişkin hukuki konular.']
+].map(([name, description]) => ({name, description, confirmed:false}));
